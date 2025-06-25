@@ -27,6 +27,9 @@ app.use("/comments", commentsRouter);
 app.use('/posts', postsRouter);
 app.use('/auth', authRouter);
 
+app.get("/", (req, res) => {
+  res.send({ message: "API is working" });
+});
 
 app.use((req, res, next) => {
   res.status(404).json({ message: "Route not found" });
@@ -39,9 +42,6 @@ app.use((err, req, res, next) => {
 });  
 
 //next yaha basically middleware ke paas bhej rha hai, and handle errors if any
-app.get("/", (req, res) => {
-  res.send({ message: "API is working" });
-});
 
 export default app;
 
