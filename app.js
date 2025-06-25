@@ -7,6 +7,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 dotenv.config();
+console.log("🔍 ORIGIN ENV:", process.env.ORIGIN);
 
 const app = express();
 
