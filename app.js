@@ -4,7 +4,9 @@ import commentsRouter from "./src/routes/comments.route.js";
 import postsRouter from './src/routes/posts.route.js';
 import authRouter from './src/routes/auth.route.js';
 import cors from "cors";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 const app = express();
 
@@ -13,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.ORIGIN,
     credentials: true,
   })  
 );  
