@@ -39,6 +39,9 @@ app.use((err, req, res, next) => {
 });  
 
 //next yaha basically middleware ke paas bhej rha hai, and handle errors if any
+app.get("/", (req, res) => {
+  res.send({ message: "API is working" });
+});
 
 export default app;
 
